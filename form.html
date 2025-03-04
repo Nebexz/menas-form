@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Effect</title>
+    <style>
+        body {
+            background-color: hwb(0 12% 100%);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            margin-top: 20px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .title {
+            color: white;
+            font-size: 28px;
+            font-weight: 400;
+        }
+
+        .subtitle {
+            color: #949494;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .input-container {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .input-container input {
+            border: none;
+            background-color: transparent;
+            color: #09A4D9;
+            font-size: 28px;
+            font-weight: 200;
+            text-align: center;
+            outline: none;
+        }
+
+        .input-container input::placeholder {
+            color: #09A4D9;
+            opacity: 0.7;
+        }
+
+        .input-container .underline {
+            height: 2px;
+            background: #0896C7;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .next-button {
+            padding: 10px 32px;
+            background: #09A4D9;
+            border-radius: 8px;
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+        }
+        .next-button:hover {
+            opacity: 0.8; /* Add hover effect */
+        }
+
+        .enter-text {
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .footer {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 4px; 
+            
+        }
+        .back-page, .next-page {
+            cursor: pointer; /* Make it look clickable */
+            width: 50px; /* Adjust size as needed */
+            height: 50px;
+            transition: opacity 0.3s ease; /* Smooth transition for opacity */
+        }
+
+        .back-page:hover, .next-page:hover {
+            opacity: 0.8; /* Add hover effect */
+        }
+
+        .back-page[disabled], .next-page[disabled] {
+            opacity: 0.5; /* Dim the button when disabled */
+            cursor: not-allowed; /* Show disabled cursor */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <object type="image/svg+xml" data="assets/logo.svg" class="logo"></object>
+        
+        <div class="content">
+            <div class="title">Get Started with MENAS</div>
+            <div class="subtitle">What’s your email address?</div>
+            <div class="input-container">
+                <input type="email" placeholder="Enter your answer here...">
+                <div class="underline"></div>
+            </div>
+            <div class="buttons">
+                <button class="next-button">Next</button>
+                <div class="enter-text">or press Enter</div>
+                <object type="image/svg+xml" data="assets/enter.svg" class="logo"></object>
+            </div>
+        </div>
+        <div class="footer">
+            <object type="image/svg+xml" data="assets/back.svg" class="back-page"></object>
+            <object type="image/svg+xml" data="assets/next.svg" class="next-page"></object>
+        </div>
+    </div>
+</body>
+</html>

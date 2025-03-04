@@ -1,0 +1,173 @@
+
+/* Accordion Container */
+.accordion {
+width: 100%;
+max-width: 600px;
+margin: 0 auto;
+border: 1px solid #0896C7;
+border-radius: 8px;
+overflow: hidden;
+}
+
+/* Accordion Header */
+.accordion-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 16px;
+background-color: hsla(195, 92%, 36%, 0.1);
+color: #F3F3F3;
+cursor: pointer;
+font-size: 18px;
+font-weight: 500;
+}
+
+/* Accordion Header SVG Icon */
+.accordion-header svg {
+transition: transform 0.3s ease;
+}
+
+/* Rotate SVG Icon When Accordion is Open */
+.accordion.open .accordion-header svg {
+transform: rotate(180deg);
+}
+
+/* Accordion Content */
+.accordion-content {
+
+overflow-y: auto; /* Ensure scrolling is enabled */
+max-height: 0px; /* Adjust based on your design */
+
+transition: max-height 0.3s ease;
+background-color: hsla(195, 92%, 36%, 0.1);
+}
+
+/* Expand Accordion Content When Open */
+.accordion.open .accordion-content {
+max-height: 300px; /* Adjust based on content */
+}
+
+/* Accordion Item */
+.accordion-item {
+padding: 16px;
+border-bottom: 1px solid hsla(195, 92%, 41%, 0.1);
+}
+
+/* Text Input */
+
+.text-input {
+    border: none;
+    background-color: transparent;
+    color: #09A4D9;
+    font-size: 28px;
+    font-weight: 200;
+    text-align: center;
+    outline: none;
+}
+
+.text-input input::placeholder {
+    color: #09A4D9;
+    opacity: 0.7;
+}
+
+
+
+/* Hide Radio Buttons */
+.accordion-radio {
+display: block;
+}
+
+/* Accordion Label */
+
+/* Text Input Container (Hidden by Default) */
+.text-input-container {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+/* Show Text Input Container When "Other" is Selected */
+.accordion-radio:checked ~ .text-input-container {
+max-height: 60px; /* Adjust based on input height */
+padding-top: 8px;
+}
+/* Custom Radio Button */
+.accordion-label {
+display: flex;
+align-items: center;
+cursor: pointer;
+font-size: 16px;
+color: #acacac;
+position: relative;
+padding-left: 30px; /* Space for the custom radio button */
+}
+
+/* Hide Default Radio Button */
+.accordion-radio {
+display: none;
+}
+
+/* Custom Radio Button Box */
+.accordion-label::before {
+content: '';
+position: absolute;
+left: 0;
+top: 50%;
+transform: translateY(-50%);
+width: 20px;
+height: 20px;
+border: 2px solid #0787B3; /* Border color */
+border-radius: 4px; /* Slightly rounded corners */
+background-color: rgba(255, 255, 255, 0);
+transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom Radio Button Tick (Hidden by Default) */
+.accordion-label::after {
+content: '';
+position: absolute;
+left: 6px;
+top: 50%;
+transform: translateY(-50%) scale(0);
+width: 8px;
+height: 8px;
+background-color: white; /* Tick color */
+clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+transition: transform 0.3s ease;
+}
+
+/* When Radio Button is Checked */
+.accordion-radio:checked + .accordion-label::before {
+background-color: hsla(195, 92%, 36%, 0.1); /* Background color when selected */
+border-color: #0787B3;
+}
+
+.accordion-radio:checked + .accordion-label::after {
+transform: translateY(-50%) scale(1); /* Show the tick */
+}
+/* Blinking Animation */
+@keyframes blink {
+0%, 100% { opacity: 1; }
+50% { opacity: 0; }
+}
+
+/* Apply Blinking Animation to Selected Option */
+.accordion-radio:checked + .accordion-label {
+animation: blink 0.3s ease 2; /* Blink twice */
+}
+.accordion-content::-webkit-scrollbar-track {
+background-color: #056585; /* Light gray track */
+border-radius: 6px; /* Rounded corners */
+}
+
+/* Scrollbar Thumb */
+.accordion-content::-webkit-scrollbar-thumb {
+background-color: #139ddd; /* Blue thumb */
+border-radius: 6px; /* Rounded corners */
+border: 2px solid #056585; /* Add a border to match the track */
+}
+
+/* Scrollbar Width */
+.accordion-content::-webkit-scrollbar {
+width: 12px; /* Adjust scrollbar width */
+}

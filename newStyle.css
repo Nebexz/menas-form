@@ -1,0 +1,218 @@
+body {
+    background-color: hwb(0 12% 100%);
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden; /* Prevent scroll during animation */
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.content {
+    display: none; /* Hide all by default */
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    position: absolute;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease;
+}
+.textarea-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/* Scrollbar Thumb */
+
+/* Base Textarea Styles */
+.custom-textarea {
+    width: 95%; /* Full width */
+    height: 100px; /* Adjust height as needed */
+    padding: 10px;
+    border: none; /* Normal border color */
+    border-radius: 8px; /* Rounded corners */
+    font-family: 'Arial', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    color: #0787B3; /* Text color */
+    background-color: #0d111700; /* Background color */
+    resize: vertical; /* Allow vertical resizing */
+    outline: none; /* Remove default focus outline */
+    transition: all 0.3s ease; /* Smooth transitions */
+  }
+  
+  /* Hover State */
+  .custom-textarea:hover {
+    border-color: #0787B3; /* Blue border on hover */
+    background-color: #ffffff05; /* Light background on hover */
+  }
+  
+  /* Focus State */
+  .custom-textarea:focus {
+    border-color: #1bbeff; /* Darker blue border on focus */
+    box-shadow: 0 0 8px rgba(5, 102, 141, 0.3); /* Subtle glow effect */
+    background-color: #ffffff00; /* White background on focus */
+  }
+  
+  /* Disabled State */
+  .custom-textarea:disabled {
+    border-color: #ddd; /* Light gray border */
+    background-color: #eee; /* Light gray background */
+    color: #999; /* Gray text */
+    cursor: not-allowed; /* Show disabled cursor */
+  }
+  
+  /* Placeholder Text */
+  .custom-textarea::placeholder {
+    color: #09A4D9; /* Light gray placeholder text */
+    font-style: italic;
+  }
+  
+  /* Read-Only State */
+  .custom-textarea:read-only {
+    border-color: #bbb; /* Gray border */
+    background-color: #f5f5f5; /* Light gray background */
+    color: #666; /* Dark gray text */
+    cursor: default; /* Show default cursor */
+  }
+  .custom-textarea::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+}
+
+.custom-textarea::-webkit-scrollbar-track {
+    background: #055d7b; /* Set the background color of the track */
+    border-radius: 4px; /* Add rounded corners to the track */
+}
+
+.custom-textarea::-webkit-scrollbar-thumb {
+    background: #09A4D9; /* Set the color of the scrollbar thumb */
+    border-radius: 4px; /* Add rounded corners to the thumb */
+}
+
+.custom-textarea::-webkit-scrollbar-thumb:hover {
+    background: #0ad3d3; /* Change the color of the thumb on hover */
+    cursor: pointer;
+}
+
+/* Animations */
+.slide-up {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.slide-down {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.active {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.title {
+    color: white;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.subtitle {
+    color: #949494;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.input-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.input-container input {
+    border: none;
+    background-color: transparent;
+    color: #09A4D9;
+    font-size: 28px;
+    font-weight: 200;
+    text-align: center;
+    outline: none;
+}
+
+.input-container input::placeholder {
+    color: #09A4D9;
+    opacity: 0.7;
+}
+
+.input-container .underline {
+    height: 2px;
+    background: #0896C7;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.next-button, .back-button {
+    padding: 10px 32px;
+    background: #09A4D9;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.next-button:hover, .back-button:hover {
+    opacity: 0.8;
+}
+
+.footer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.back-page, .next-page {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    transition: opacity 0.3s ease;
+}
+
+.back-page:hover, .next-page:hover {
+    opacity: 0.8;
+}
+
+.back-page[disabled], .next-page[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
