@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #055d7b;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1-2">
+    <g id="Iconmark_Dark" data-name="Iconmark Dark">
+      <g>
+        <path class="cls-1" d="m40,34.4l-17.2-17.2L40,0l17.2,17.2-17.2,17.2Z"/>
+        <path class="cls-1" d="m17.2,57.2L0,40l17.2-17.2,5.16,5.16-12.04,12.04,12.04,12.04-5.16,5.16Z"/>
+        <path class="cls-1" d="m40,45.6l-17.2,17.2,17.2,17.2,17.2-17.2-17.2-17.2Z"/>
+        <path class="cls-1" d="m57.2,51.6l5.6,5.6,17.2-17.2-17.2-17.2-5.6,5.6,11.6,11.6s-11.6,11.6-11.6,11.6Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

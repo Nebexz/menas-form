@@ -39,7 +39,7 @@ body {
     max-width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 40px;
 }
 /* Scrollbar Thumb */
 
@@ -199,6 +199,31 @@ body {
     gap: 20px;
     align-items: center;
     margin-bottom: 4px;
+}
+.progress-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(-90deg);
+}
+
+.progress-background {
+    fill: none;
+    stroke: #30363d;
+    stroke-width: 4;
+}
+
+.progress-circle {
+    fill: none;
+    stroke: #58a6ff;
+    stroke-width: 4;
+    stroke-dasharray: 0, 100;
+    transition: stroke-dasharray 0.3s ease-in-out;
+}
+
+.progress-text {
+    fill: white;
+    font-size: 12px;
 }
 
 .back-page, .next-page {

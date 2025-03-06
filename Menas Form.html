@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Image Effect</title>
-    <link rel="stylesheet" href="/newStyle.css" />
-    <link rel="stylesheet" href="/form.css" />
+    <title>Menas Form</title>
+
+    <link rel="icon" href="/assets/Iconmark Dark.svg" />
+
+    <link rel="stylesheet" href="/Menas Form 2.css" />
+    <link rel="stylesheet" href="/Menas Form 1.css" />
 </head>
 <body>
     <div class="container">
@@ -69,7 +72,7 @@
                         <div class="accordion-item">
                             <input type="radio" name="accordion" id="item3" class="accordion-radio">
                             <label for="item3" class="accordion-label">Other (Specify)</label>
-                            <div class="text-input-container">
+                            <div class="text-input-container" id="dynamic-text-input">
                                 <input type="text" placeholder="Enter your answer..." class="text-input">
                             </div>
                         </div>
@@ -89,18 +92,22 @@
                 </div>
                 <div class="buttons">
                     <button class="back-button">Back</button>
-                    <button class="next-button">Submit</button>
+                    <button class="next-button submit">Submit</button>
                 </div>
             </div>
         </div>
         
         
         <div class="footer">
-            <object type="image/svg+xml" data="assets/back.svg" class="back-page"></object>
-            <object type="image/svg+xml" data="assets/next.svg" class="next-page"></object>
+            <svg class="progress-container" width="50" height="50">
+                <circle class="progress-background" cx="25" cy="25" r="22"></circle>
+                <circle class="progress-circle" cx="25" cy="25" r="22"></circle>
+                <text class="progress-text" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">0%</text>
+            </svg>
+           
         </div>
     </div>
 </body>
-<script type="module" src="/newScript.js"></script>
+<script type="module" src="/Menas Form.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 </html>
